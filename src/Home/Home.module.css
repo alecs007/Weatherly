@@ -2,8 +2,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   height: 100vh;
   width: 100vw;
   background-color: var(--background-color);
+}
+.title {
+  font-size: clamp(4em, 8vw, 10em);
+  color: var(--text-color);
+  font-family: title;
+  margin-top: 50px;
+}
+input {
+  width: 30%;
+  min-width: 20em;
+  height: 40px;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-top: 20px;
+  font-size: 1em;
 }

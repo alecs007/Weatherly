@@ -26,18 +26,25 @@ const Home = () => {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      fetchWeather();
+    }
+  };
+
   useEffect(() => {
     fetchWeather();
   }, []);
 
   return (
     <section className={styles.home_container}>
-      <h1>Weather App</h1>
+      <h1 className={styles.title}>weatherly</h1>
       <input
         type="text"
         value={location}
         placeholder="Search location"
         onChange={(e) => setLocation(e.target.value)}
+        onKeyPress={handleKeyPress}
       ></input>
       <button onClick={fetchWeather}>Search</button>
       {loading && <p>Loading...</p>}
@@ -46,7 +53,13 @@ const Home = () => {
         <div>
           <h2>{weather.name}</h2>
           <p>{weather.weather[0].description}</p>
-          <p>{weather.main.temp} &deg;C</p>
+          <p>Temp: {weather.main.temp} &deg;C</p>
+          <p>Max Temp: {weather.main.temp_max} &deg;C</p>
+          <p>Min Temp: {weather.main.temp_min} &deg;C</p>
+          <img
+            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+            alt={weather.weather[0].description}
+          />
         </div>
       )}
     </section>

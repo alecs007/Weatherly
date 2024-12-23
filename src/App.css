@@ -1,5 +1,9 @@
+@font-face {
+  font-family: title;
+  src: url("../public/fonts/TrainOne-Regular.ttf");
+}
 :root {
-  --text-color: #ffffff;
+  --text-color: #ffffffde;
   --background-color: rgb(21, 29, 29);
 }
 * {

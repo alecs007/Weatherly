@@ -1,9 +1,11 @@
+import React from "react";
 import "./App.css";
+import Home from "./Home/Home";
 
 function App() {
   return (
     <>
-      <p>Click on the Vite and React logos to learn more</p>
+      <Home />
     </>
   );
 }

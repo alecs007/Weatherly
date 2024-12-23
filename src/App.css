@@ -11,6 +11,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--background-color);

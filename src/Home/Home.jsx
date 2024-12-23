@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import axios from "axios";
+import search from "../assets/search.png";
 
 const Home = () => {
   const [weather, setWeather] = useState(null);
@@ -39,29 +40,27 @@ const Home = () => {
   return (
     <section className={styles.home_container}>
       <h1 className={styles.title}>weatherly</h1>
-      <input
-        type="text"
-        value={location}
-        placeholder="Search location"
-        onChange={(e) => setLocation(e.target.value)}
-        onKeyPress={handleKeyPress}
-      ></input>
-      <button onClick={fetchWeather}>Search</button>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {weather && (
-        <div>
-          <h2>{weather.name}</h2>
-          <p>{weather.weather[0].description}</p>
-          <p>Temp: {weather.main.temp} &deg;C</p>
-          <p>Max Temp: {weather.main.temp_max} &deg;C</p>
-          <p>Min Temp: {weather.main.temp_min} &deg;C</p>
-          <img
-            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-            alt={weather.weather[0].description}
-          />
+      <h2 className={styles.subtitle}>
+        the only weather app you will ever need
+      </h2>
+      <div className={styles.search_bar}>
+        <input
+          type="text"
+          value={location}
+          placeholder="Search location"
+          onChange={(e) => setLocation(e.target.value)}
+          onKeyPress={handleKeyPress}
+        ></input>
+        <div className={styles.search_button} onClick={fetchWeather}>
+          <img src={search} alt="search" />
         </div>
-      )}
+      </div>
+      <div className={styles.whitespace}>
+        {loading && <p>Loading...</p>}
+        {error && <p>{error}</p>}
+      </div>
+
+      <div className={styles.weather_container}>123</div>
     </section>
   );
 };

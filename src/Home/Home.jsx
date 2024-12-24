@@ -29,14 +29,14 @@ const Home = () => {
     }
   };
 
-  const fetchSuggestions = async (q) => {
-    if (q.trim().length < 2) {
+  const fetchSuggestions = async (e) => {
+    if (e.trim().length < 2) {
       setSuggestions([]);
       return;
     }
     try {
       const respone = await axios.get(
-        `https://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=5&appid=${apiKey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${e}&limit=5&appid=${apiKey}`
       );
       setSuggestions(respone.data.slice(0, 5));
     } catch (err) {

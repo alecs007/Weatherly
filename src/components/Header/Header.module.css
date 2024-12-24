@@ -1,0 +1,13 @@
+.header {
+  top: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: transparent;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.theme_button {
+  margin-right: 10px;
+}

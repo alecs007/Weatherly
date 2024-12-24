@@ -4,16 +4,18 @@
   align-items: center;
   justify-content: start;
   height: fit-content;
+  padding-top: 50px;
   min-height: 100vh;
   width: 100vw;
   background-color: var(--background-color);
   overflow: auto;
+  transition: all 0.3s ease-in-out;
 }
 .title {
   font-size: clamp(4em, 8vw, 10em);
   color: var(--text-color);
   font-family: title;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 .subtitle {
   font-size: clamp(0.8em, 1.5vw, 2em);
@@ -22,7 +24,7 @@
   opacity: 0.8;
 }
 .search_bar {
-  border: 2px solid rgb(53, 93, 119);
+  border: 2px solid var(--text-color);
   height: 40px;
   width: fit-content;
   display: flex;
@@ -34,10 +36,9 @@
   overflow: hidden;
 }
 input {
-  background-color: var(--text-color);
   height: 100%;
-  width: clamp(250px, 40vw, 600px);
-  border: 1px solid var(--text-color);
+  width: clamp(280px, 40vw, 600px);
+  border: none;
   padding: 0 10px;
   font-size: 1em;
 }
@@ -50,7 +51,8 @@ input:focus {
 .search_button {
   height: 100%;
   width: 40px;
-  background-color: var(--text-color);
+  background-color: rgb(207, 207, 207);
+  border-left: 2px solid var(--text-color);
   display: flex;
   align-items: center;
   justify-content: center;

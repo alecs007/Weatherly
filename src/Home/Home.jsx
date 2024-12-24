@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import axios from "axios";
+import ThemeToggle from "../components/ThemeToggle/ThemeToggle";
 import search from "../assets/search.png";
 
 const Home = () => {
@@ -59,7 +60,6 @@ const Home = () => {
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
       </div>
-
       <div className={styles.weather_container}>123</div>
     </section>
   );

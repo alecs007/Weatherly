@@ -7,8 +7,9 @@
   display: flex;
   align-items: center;
   gap: 3px;
-  border: 1px solid var(--text-color);
+  border: 2px solid var(--text-color);
   border-radius: 12px;
+  opacity: 0.8;
   p {
     font-weight: 600;
   }

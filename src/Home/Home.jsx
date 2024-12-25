@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import axios from "axios";
 import search from "../assets/search.png";
+import location_icon from "../assets/location.png";
 
 const Home = () => {
   const [weather, setWeather] = useState(null);
@@ -102,7 +103,36 @@ const Home = () => {
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
       </div>
-      <div className={styles.weather_container}>123</div>
+      {weather && (
+        <div className={styles.weather_container}>
+          <div className={styles.main}>
+            <div className={styles.main_weather}>
+              <div className={styles.weather_stats}>
+                <div className={styles.weather_location}>
+                  <img src={location_icon} alt="search" />
+                  <p>{weather.name}</p>
+                </div>
+                <div className={styles.weather_temp}>
+                  <p>{weather.main.temp}°C</p>
+                </div>
+                <div className={styles.weather_description}>
+                  <p>{weather.weather[0].description}</p>
+                </div>
+              </div>
+              <div className={styles.weather_img}>
+                {" "}
+                <img
+                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                  alt={weather.weather[0].description}
+                />
+              </div>
+            </div>
+            <div className={styles.main_map}>123</div>
+          </div>
+          <div className={styles.details}>123</div>
+          <div className={styles.forecast}>123</div>
+        </div>
+      )}
     </section>
   );
 };

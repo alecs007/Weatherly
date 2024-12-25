@@ -10,6 +10,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
+  const [forecast, setForecast] = useState(null);
 
   const apiKey = "08c166350cc8024625e3df240b998376";
 
@@ -23,8 +24,28 @@ const Home = () => {
       );
       setWeather(response.data);
       setSuggestions([]);
+      await fetchForecast();
     } catch (err) {
       setError("Failed to fetch weather data", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchForecast = async () => {
+    const loc = location.trim() || "Bucharest";
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${loc}&appid=${apiKey}&units=metric`
+      );
+      const dailyData = response.data.list.filter((item) =>
+        item.dt_txt.includes("12:00:00")
+      );
+      setForecast(dailyData);
+    } catch (err) {
+      setError("Failed to fetch forecast data", err);
     } finally {
       setLoading(false);
     }
@@ -113,7 +134,12 @@ const Home = () => {
                   <p>{weather.name}</p>
                 </div>
                 <div className={styles.weather_temp}>
-                  <p>{weather.main.temp}°C</p>
+                  <p>
+                    {Number.isInteger(weather.main.temp)
+                      ? weather.main.temp
+                      : weather.main.temp.toFixed(1)}
+                    °C
+                  </p>
                 </div>
                 <div className={styles.weather_description}>
                   <p>{weather.weather[0].description}</p>
@@ -130,7 +156,26 @@ const Home = () => {
             <div className={styles.main_map}>123</div>
           </div>
           <div className={styles.details}>123</div>
-          <div className={styles.forecast}>123</div>
+          <div className={styles.forecast}>
+            {forecast && (
+              <div className={styles.forecast_container}>
+                <h2>5-Day Forecast</h2>
+                <div className={styles.forecast_list}>
+                  {forecast.map((day, index) => (
+                    <div key={index} className={styles.forecast_item}>
+                      <p>{new Date(day.dt_txt).toLocaleDateString()}</p>
+                      <img
+                        src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
+                        alt={day.weather[0].description}
+                      />
+                      <p>{day.main.temp}°C</p>
+                      <p>{day.weather[0].description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </section>

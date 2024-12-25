@@ -135,9 +135,7 @@ const Home = () => {
                 </div>
                 <div className={styles.weather_temp}>
                   <p>
-                    {Number.isInteger(weather.main.temp)
-                      ? weather.main.temp
-                      : weather.main.temp.toFixed(1)}
+                    {weather.main.temp.toFixed(1)}
                     °C
                   </p>
                 </div>

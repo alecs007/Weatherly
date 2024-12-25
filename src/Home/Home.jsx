@@ -23,7 +23,7 @@ const Home = () => {
       setWeather(response.data);
       setSuggestions([]);
     } catch (err) {
-      setError("Failed to fetch weather data");
+      setError("Failed to fetch weather data", err);
     } finally {
       setLoading(false);
     }
@@ -40,7 +40,7 @@ const Home = () => {
       );
       setSuggestions(respone.data.slice(0, 5));
     } catch (err) {
-      setSuggestions([]);
+      setSuggestions([], err);
     }
   };
 

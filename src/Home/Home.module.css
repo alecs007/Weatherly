@@ -80,13 +80,13 @@ input:focus {
   min-width: 1200px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(0, 0, 0, 0.68);
+  background-color: rgba(0, 0, 0, 0.226);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  border: 1px solid var(--text-color);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.534);
   display: grid;
   grid-template-areas: "forecast main details";
-  grid-template-columns: 1fr 45% 1fr;
+  grid-template-columns: 1fr 42% 1fr;
   grid-template-rows: 1fr;
 }
 .suggestions_list {
@@ -123,7 +123,6 @@ input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 2px solid red;
 }
 .details {
   grid-area: details;
@@ -131,7 +130,6 @@ input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid red;
 }
 .forecast {
   grid-area: forecast;
@@ -139,11 +137,13 @@ input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid red;
 }
 .main_weather {
-  background-color: rgb(196, 192, 192);
-  width: 95%;
+  backdrop-filter: blur(6px) saturate(155%);
+  -webkit-backdrop-filter: blur(6px) saturate(155%);
+  background: linear-gradient(to bottom, #7474bf, #348ac7);
+  border-radius: 12px;
+  width: 98%;
   height: 40%;
   border-radius: 10px;
   display: flex;
@@ -179,7 +179,7 @@ input:focus {
 }
 .weather_temp {
   p {
-    font-size: clamp(4em, 4vw, 8em);
+    font-size: clamp(5em, 4vw, 8em);
     color: rgba(0, 0, 0, 0.733);
     font-weight: 1000;
   }
@@ -203,32 +203,90 @@ input:focus {
 }
 .main_map {
   background-color: indianred;
-  width: 95%;
+  width: 98%;
   height: 55%;
   border-radius: 10px;
+  cursor: default;
 }
 .forecast_container {
-  background-color: royalblue;
+  background: linear-gradient(to top, #2c3e50, #4ca1af);
   width: 95%;
-  height: 98%;
+  height: 97%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
-  h2 {
-    font-size: clamp(2em, 2vw, 3em);
-    color: rgba(255, 255, 255, 0.719);
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-weight: 1000;
-  }
+}
+.forecast_title {
+  text-align: center;
+  font-size: clamp(2em, 2vw, 3em);
+  color: rgba(255, 255, 255, 0.719);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 1000;
 }
 .forecast_list {
-  background-color: rgba(255, 255, 255, 0.349);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
   height: 80%;
+}
+.forecast_item {
+  width: 85%;
+  height: 17%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.349);
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.forecast_item:hover {
+  transform: scale(1.02);
+}
+.forecast_p1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 35%;
+  height: 100%;
+  padding-left: 20px;
+  h2 {
+    font-size: clamp(1.2em, 1vw, 2em);
+    color: rgba(0, 0, 0, 0.719);
+    font-family:
+      "Franklin Gothic Medium",
+      "Arial Narrow",
+      Arial,
+      sans-serif sans-serif;
+    font-weight: 1000;
+  }
+  p {
+    font-size: clamp(0.8em, 0.7vw, 1.2em);
+    color: rgba(0, 0, 0, 0.459);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 1000;
+  }
+}
+.forecast_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+  img {
+    height: 100%;
+  }
+}
+.forecast_p2 {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: clamp(1.5em, 1.2vw, 2em);
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
 }

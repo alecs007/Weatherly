@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Home.module.css";
 import axios from "axios";
 import search from "../assets/search.png";
 import location_icon from "../assets/location.png";
+import location_marker from "../assets/location_marker.png";
 
 const Home = () => {
   const [weather, setWeather] = useState(null);
@@ -11,6 +12,8 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
   const [forecast, setForecast] = useState(null);
+  const [coords, setCoords] = useState(null);
+  const mapRef = useRef(null);
 
   const apiKey = "08c166350cc8024625e3df240b998376";
 
@@ -23,6 +26,10 @@ const Home = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${loc}&lang=en&appid=${apiKey}&units=metric`
       );
       setWeather(response.data);
+      setCoords({
+        lat: response.data.coord.lat,
+        lng: response.data.coord.lon,
+      });
       setSuggestions([]);
       await fetchForecast();
     } catch (err) {
@@ -80,6 +87,34 @@ const Home = () => {
   useEffect(() => {
     fetchWeather();
   }, []);
+
+  useEffect(() => {
+    if (coords && mapRef.current) {
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: coords,
+        zoom: 12,
+        disableDefaultUI: true,
+        draggable: false,
+        scrollwheel: false,
+        disableDoubleClickZoom: true,
+        styles: [
+          {
+            elementType: "labels.icon",
+            stylers: [{ visibility: "off" }],
+          },
+        ],
+      });
+
+      new window.google.maps.Marker({
+        position: coords,
+        map,
+        icon: {
+          url: location_marker,
+          scaledSize: new window.google.maps.Size(40, 40),
+        },
+      });
+    }
+  }, [coords]);
 
   return (
     <section className={styles.home_container}>
@@ -151,23 +186,35 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className={styles.main_map}>123</div>
+            <div className={styles.main_map} ref={mapRef}>
+              123
+            </div>
           </div>
           <div className={styles.details}>123</div>
           <div className={styles.forecast}>
             {forecast && (
               <div className={styles.forecast_container}>
-                <h2>5-Day Forecast</h2>
+                <h2 className={styles.forecast_title}>5-Day Forecast</h2>
                 <div className={styles.forecast_list}>
                   {forecast.map((day, index) => (
                     <div key={index} className={styles.forecast_item}>
-                      <p>{new Date(day.dt_txt).toLocaleDateString()}</p>
+                      <div className={styles.forecast_p1}>
+                        <h2>
+                          {new Date(day.dt_txt).toLocaleDateString("en-US", {
+                            weekday: "long",
+                          })}
+                        </h2>
+                        <p>{day.weather[0].description}</p>
+                      </div>
+
                       <img
                         src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
                         alt={day.weather[0].description}
+                        className={styles.forecast_img}
                       />
-                      <p>{day.main.temp}°C</p>
-                      <p>{day.weather[0].description}</p>
+                      <div className={styles.forecast_p2}>
+                        <p>{day.main.temp.toFixed(1)}°C</p>
+                      </div>
                     </div>
                   ))}
                 </div>

@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   height: fit-content;
-  padding-top: 50px;
   min-height: 100vh;
   width: 100vw;
   background-color: var(--background-color);
@@ -66,29 +65,6 @@ input:focus {
     height: 60%;
   }
 }
-.whitespace {
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.weather_container {
-  margin-top: 4vh;
-  margin-bottom: 100px;
-  aspect-ratio: 2 / 1;
-  width: 70%;
-  min-width: 1200px;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(0, 0, 0, 0.226);
-  border-radius: 12px;
-  border: 1px solid var(--text-color);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.534);
-  display: grid;
-  grid-template-areas: "forecast main details";
-  grid-template-columns: 1fr 42% 1fr;
-  grid-template-rows: 1fr;
-}
 .suggestions_list {
   position: absolute;
   top: 100%;
@@ -117,6 +93,29 @@ input:focus {
 .suggestion_item:hover {
   background: rgba(0, 0, 0, 0.158);
 }
+.whitespace {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather_container {
+  margin-top: 1vh;
+  margin-bottom: 50px;
+  aspect-ratio: 2 / 1;
+  width: 70%;
+  min-width: 1200px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.226);
+  border-radius: 12px;
+  border: 1px solid var(--text-color);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.534);
+  display: grid;
+  grid-template-areas: "forecast main details";
+  grid-template-columns: 1fr 42% 1fr;
+  grid-template-rows: 1fr;
+}
 .main {
   grid-area: main;
   display: flex;
@@ -141,7 +140,12 @@ input:focus {
 .main_weather {
   backdrop-filter: blur(6px) saturate(155%);
   -webkit-backdrop-filter: blur(6px) saturate(155%);
-  background: linear-gradient(to bottom, #7474bf, #348ac7);
+  background: linear-gradient(
+    to right,
+    rgba(224, 234, 252, 0.8),
+    rgba(158, 178, 209, 0.8)
+  );
+
   border-radius: 12px;
   width: 98%;
   height: 40%;

@@ -190,7 +190,6 @@ const Home = () => {
               123
             </div>
           </div>
-          <div className={styles.details}>123</div>
           <div className={styles.forecast}>
             {forecast && (
               <div className={styles.forecast_container}>
@@ -220,6 +219,33 @@ const Home = () => {
                 </div>
               </div>
             )}
+          </div>
+          <div className={styles.details}>
+            <div className={styles.details_item}>
+              <div className={styles.feels_like}>
+                <h2>Feels like</h2>
+                <p>{weather.main.feels_like.toFixed(1)}°C</p>
+              </div>
+              <hr></hr>
+              <div className={styles.max_min_temp}>
+                <h2>
+                  Min <i class="fa-solid fa-arrow-down"></i>
+                </h2>
+                <p>{weather.main.temp_min.toFixed(1)}°C</p>
+              </div>
+              <hr></hr>
+              <div className={styles.max_min_temp}>
+                <h2>
+                  Max <i class="fa-solid fa-arrow-up"></i>
+                </h2>
+                <p>{weather.main.temp_max.toFixed(1)}°C</p>
+              </div>
+            </div>
+            <div className={styles.details_item}>Humidity,Pressure</div>
+            <div className={styles.details_item}>Wind speed,direction</div>
+            <div className={styles.details_item}>Rain</div>
+            <div className={styles.details_item}>Cloudiness,visibility</div>
+            <div className={styles.details_item}>Sunrise/Sunset</div>
           </div>
         </div>
       )}

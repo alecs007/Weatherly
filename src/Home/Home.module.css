@@ -128,7 +128,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .forecast {
   grid-area: forecast;
@@ -214,7 +214,7 @@ input:focus {
   cursor: default;
 }
 .forecast_container {
-  background: linear-gradient(to top, #2c3e50, #4ca1af);
+  background: linear-gradient(to top, #517599, #3a8892);
   width: 95%;
   height: 97%;
   display: flex;
@@ -291,6 +291,52 @@ input:focus {
   justify-content: center;
   p {
     font-size: clamp(1.5em, 1.2vw, 2em);
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
+}
+.details_item {
+  width: 95%;
+  height: 14%;
+  background-color: rgba(240, 248, 255, 0.836);
+  border-radius: 10px;
+  font-size: clamp(1.5em, 1.2vw, 2em);
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: 1000;
+}
+.details_item:nth-child(1) {
+  display: flex;
+  div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .feels_like {
+    width: 40%;
+  }
+  .max_min_temp {
+    width: 30%;
+  }
+  h2 {
+    font-size: clamp(1em, 1.5vw, 1.2em);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
+  p {
+    font-size: clamp(0.8em, 1.4vw, 2em);
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
+  hr {
+    width: 4px;
+    background-color: rgba(0, 0, 0, 0.356);
+    border: none;
+  }
+  i {
+    font-size: clamp(0.8em, 1vw, 1em);
     color: rgba(0, 0, 0, 0.719);
     font-weight: 1000;
   }

@@ -142,13 +142,13 @@ input:focus {
   -webkit-backdrop-filter: blur(6px) saturate(155%);
   background: linear-gradient(
     to right,
-    rgba(224, 234, 252, 0.8),
-    rgba(158, 178, 209, 0.8)
+    rgba(210, 224, 250, 0.8),
+    rgba(131, 170, 228, 0.644)
   );
 
   border-radius: 12px;
   width: 98%;
-  height: 40%;
+  height: 35%;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -174,7 +174,7 @@ input:focus {
   }
   p {
     margin-left: 5px;
-    font-size: clamp(1.7em, 2vw, 2.5em);
+    font-size: clamp(2em, 2vw, 2.5em);
     color: rgba(0, 0, 0, 0.719);
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
@@ -206,10 +206,44 @@ input:focus {
     height: 100%;
   }
 }
+.hourly_forecast_container {
+  width: 92%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+}
+.hourly_forecast_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(122, 150, 235, 0.801);
+  border: 3px solid rgba(38, 64, 102, 0.479);
+  border-radius: 10px;
+  padding: 5px;
+  height: 120px;
+  width: 100px;
+  p {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
+  h2 {
+    text-align: center;
+    font-size: 1.4em;
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
+  img {
+    width: 100%;
+    height: 60%;
+  }
+}
 .main_map {
   background-color: indianred;
   width: 98%;
-  height: 55%;
+  height: 43%;
   border-radius: 10px;
   cursor: default;
 }
@@ -226,9 +260,11 @@ input:focus {
 .forecast_title {
   text-align: center;
   font-size: clamp(2em, 2vw, 3em);
-  color: rgba(255, 255, 255, 0.719);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 1000;
+  background: linear-gradient(to bottom, #ffffff, #ffffff, #4793a7);
+  background-clip: text;
+  color: transparent;
 }
 .forecast_list {
   display: flex;
@@ -298,7 +334,8 @@ input:focus {
 .details_item {
   width: 95%;
   height: 14%;
-  background-color: rgba(240, 248, 255, 0.836);
+  background-color: rgba(255, 255, 255, 0.884);
+  border: 3px solid rgba(0, 0, 0, 0.541);
   border-radius: 10px;
   font-size: clamp(1.5em, 1.2vw, 2em);
   color: rgba(0, 0, 0, 0.719);

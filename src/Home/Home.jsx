@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Home.module.css";
 import axios from "axios";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import search from "../assets/search.png";
 import location_icon from "../assets/location.png";
 import location_marker from "../assets/location_marker.png";
@@ -16,6 +19,7 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
   const [forecast, setForecast] = useState(null);
+  const [hourlyForecast, setHourlyForecast] = useState(null);
   const [coords, setCoords] = useState(null);
   const mapRef = useRef(null);
 
@@ -36,6 +40,10 @@ const Home = () => {
       });
       setSuggestions([]);
       await fetchForecast();
+      await fetchHourlyForecast(
+        response.data.coord.lat,
+        response.data.coord.lon
+      );
     } catch (err) {
       setError("Failed to fetch weather data", err);
     } finally {
@@ -57,6 +65,21 @@ const Home = () => {
       setForecast(dailyData);
     } catch (err) {
       setError("Failed to fetch forecast data", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchHourlyForecast = async (lat, lon) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,daily,alerts&units=metric&appid=${apiKey}`
+      );
+      setHourlyForecast(response.data.hourly.slice(1, 14));
+    } catch (err) {
+      setError("Failed to fetch hourly forecast data", err);
     } finally {
       setLoading(false);
     }
@@ -119,6 +142,17 @@ const Home = () => {
       });
     }
   }, [coords]);
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 700,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    adaptiveHeight: false,
+    variableWidth: true,
+    centerMode: false,
+  };
 
   return (
     <section className={styles.home_container}>
@@ -190,9 +224,28 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className={styles.main_map} ref={mapRef}>
-              123
-            </div>
+            {hourlyForecast && (
+              <div className={styles.hourly_forecast_container}>
+                <Slider {...settings}>
+                  {hourlyForecast.map((hour, index) => (
+                    <div key={index} className={styles.hourly_forecast_item}>
+                      <p>
+                        {new Date(hour.dt * 1000).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </p>
+                      <img
+                        src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`}
+                        alt={hour.weather[0].description}
+                      />
+                      <h2>{hour.temp.toFixed(1)}°C</h2>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+            )}
+            <div className={styles.main_map} ref={mapRef}></div>
           </div>
           <div className={styles.forecast}>
             {forecast && (
@@ -266,12 +319,12 @@ const Home = () => {
             <div className={styles.details_item}>
               <div>
                 <h2>Humidity</h2>
-                <p>{weather.main.humidity.toFixed(1)}%</p>
+                <p>{weather.main.humidity}%</p>
               </div>
               <hr></hr>
               <div>
                 <h2>Pressure</h2>
-                <p>{weather.main.pressure.toFixed(1)} hPa</p>
+                <p>{weather.main.pressure} hPa</p>
               </div>
             </div>
             <div className={styles.details_item}>

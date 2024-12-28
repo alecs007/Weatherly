@@ -39,3 +39,7 @@ body {
 ::-webkit-scrollbar-track {
   background-color: var(--background-color);
 }
+.slick-slide {
+  margin: 0 7px;
+  border-radius: 10px;
+}

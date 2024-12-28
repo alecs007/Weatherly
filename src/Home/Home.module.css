@@ -303,22 +303,6 @@ input:focus {
   font-size: clamp(1.5em, 1.2vw, 2em);
   color: rgba(0, 0, 0, 0.719);
   font-weight: 1000;
-}
-.details_item:nth-child(1) {
-  display: flex;
-  div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .feels_like {
-    width: 40%;
-  }
-  .max_min_temp {
-    width: 30%;
-  }
   h2 {
     font-size: clamp(1em, 1.5vw, 1.2em);
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -335,8 +319,99 @@ input:focus {
     background-color: rgba(0, 0, 0, 0.356);
     border: none;
   }
+}
+.details_item:nth-child(1) {
+  display: flex;
+  div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .feels_like {
+    width: 40%;
+  }
+  .max_min_temp {
+    width: 30%;
+  }
   i {
     font-size: clamp(0.8em, 1vw, 1em);
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
+}
+.details_item:nth-child(2),
+.details_item:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+  }
+  img {
+    height: 50%;
+    width: 50%;
+    opacity: 0.8;
+  }
+  div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70%;
+  }
+  h2 {
+    font-size: clamp(0.9em, 1vw, 1.2em);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: 1000;
+  }
+}
+.details_item:nth-child(4) {
+  display: flex;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+  }
+}
+.details_item:nth-child(5) {
+  display: flex;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+  }
+}
+.details_item:nth-child(6) {
+  display: flex;
+  img {
+    height: 50%;
+    width: 30%;
+    opacity: 0.8;
+  }
+  div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+  }
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  p {
+    font-size: clamp(0.7em, 1vw, 1em);
     color: rgba(0, 0, 0, 0.719);
     font-weight: 1000;
   }

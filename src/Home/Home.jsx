@@ -4,6 +4,10 @@ import axios from "axios";
 import search from "../assets/search.png";
 import location_icon from "../assets/location.png";
 import location_marker from "../assets/location_marker.png";
+import wind from "../assets/wind.png";
+import rain from "../assets/rain.png";
+import sunrise from "../assets/sunrise.png";
+import sunset from "../assets/sunset.png";
 
 const Home = () => {
   const [weather, setWeather] = useState(null);
@@ -15,7 +19,7 @@ const Home = () => {
   const [coords, setCoords] = useState(null);
   const mapRef = useRef(null);
 
-  const apiKey = "08c166350cc8024625e3df240b998376";
+  const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
   const fetchWeather = async () => {
     const loc = location.trim() || "Bucharest";
@@ -229,23 +233,84 @@ const Home = () => {
               <hr></hr>
               <div className={styles.max_min_temp}>
                 <h2>
-                  Min <i class="fa-solid fa-arrow-down"></i>
+                  Min <i className="fa-solid fa-arrow-down"></i>
                 </h2>
                 <p>{weather.main.temp_min.toFixed(1)}°C</p>
               </div>
               <hr></hr>
               <div className={styles.max_min_temp}>
                 <h2>
-                  Max <i class="fa-solid fa-arrow-up"></i>
+                  Max <i className="fa-solid fa-arrow-up"></i>
                 </h2>
                 <p>{weather.main.temp_max.toFixed(1)}°C</p>
               </div>
             </div>
-            <div className={styles.details_item}>Humidity,Pressure</div>
-            <div className={styles.details_item}>Wind speed,direction</div>
-            <div className={styles.details_item}>Rain</div>
-            <div className={styles.details_item}>Cloudiness,visibility</div>
-            <div className={styles.details_item}>Sunrise/Sunset</div>
+            <div className={styles.details_item}>
+              <div>
+                <img src={wind} alt="Wind Image" />
+              </div>
+              <div>
+                <h2>Wind speed: {weather.wind.speed.toFixed(1)} m/s</h2>
+                <h2>Wind direction: {weather.wind.deg}&deg;</h2>
+              </div>
+            </div>
+            <div className={styles.details_item}>
+              <div>
+                <img src={rain} alt="Rain Image" />
+              </div>
+              <div>
+                <h2>Rain Volume: {weather.rain ? weather.rain["1h"] : 0} mm</h2>
+                {weather.snow && <h2>Snow Volume: {weather.snow["1h"]} mm </h2>}
+              </div>
+            </div>
+            <div className={styles.details_item}>
+              <div>
+                <h2>Humidity</h2>
+                <p>{weather.main.humidity.toFixed(1)}%</p>
+              </div>
+              <hr></hr>
+              <div>
+                <h2>Pressure</h2>
+                <p>{weather.main.pressure.toFixed(1)} hPa</p>
+              </div>
+            </div>
+            <div className={styles.details_item}>
+              <div>
+                <h2>Cloudiness</h2>
+                <p>{weather.clouds.all}%</p>
+              </div>
+              <hr></hr>
+              <div>
+                <h2>Visibility</h2>
+                <p>{weather.visibility} m</p>
+              </div>
+            </div>
+            <div className={styles.details_item}>
+              <div>
+                <img src={sunrise} alt="Sunrise Image" />
+                <span>
+                  <h2>Sunrise</h2>
+                  <p>
+                    {new Date(weather.sys.sunrise * 1000).toLocaleTimeString(
+                      [],
+                      { hour: "2-digit", minute: "2-digit" }
+                    )}
+                  </p>
+                </span>
+              </div>
+              <div>
+                <img src={sunset} alt="Sunset Image" />
+                <span>
+                  <h2>Sunset</h2>
+                  <p>
+                    {new Date(weather.sys.sunset * 1000).toLocaleTimeString(
+                      [],
+                      { hour: "2-digit", minute: "2-digit" }
+                    )}
+                  </p>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       )}

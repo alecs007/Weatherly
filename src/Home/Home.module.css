@@ -248,7 +248,7 @@ input:focus {
   cursor: default;
 }
 .forecast_container {
-  background: linear-gradient(to top, #517599, #3a8892);
+  background-color: #5a8996;
   width: 95%;
   height: 97%;
   display: flex;
@@ -262,7 +262,7 @@ input:focus {
   font-size: clamp(2em, 2vw, 3em);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 1000;
-  background: linear-gradient(to bottom, #ffffff, #ffffff, #4793a7);
+  background: linear-gradient(to bottom, #ffffff, #ffffff, #5a8996);
   background-clip: text;
   color: transparent;
 }

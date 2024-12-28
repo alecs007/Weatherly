@@ -216,7 +216,7 @@ input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(122, 150, 235, 0.801);
+  background-color: rgba(153, 173, 235, 0.801);
   border: 3px solid rgba(38, 64, 102, 0.479);
   border-radius: 10px;
   padding: 5px;

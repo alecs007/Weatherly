@@ -184,14 +184,14 @@ input:focus {
 }
 .weather_temp {
   p {
-    font-size: clamp(5em, 4vw, 8em);
+    font-size: clamp(3.5em, 4vw, 8em);
     color: rgba(0, 0, 0, 0.733);
     font-weight: 1000;
   }
 }
 .weather_description {
   p {
-    font-size: clamp(1em, 1vw, 1.5em);
+    font-size: clamp(1.2em, 1vw, 1.5em);
     font-weight: 700;
     color: rgba(0, 0, 0, 0.747);
   }
@@ -469,5 +469,40 @@ input:focus {
     font-size: clamp(0.7em, 1vw, 1em);
     color: rgba(0, 0, 0, 0.719);
     font-weight: 1000;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .home_container {
+    overflow-y: auto;
+  }
+  .title {
+    margin-top: 50px;
+  }
+  .weather_container {
+    min-width: 350px;
+    width: 500px;
+    max-width: 95vw;
+    grid-template-areas:
+      "main "
+      "forecast"
+      "details";
+    grid-template-rows: 30% 35% auto;
+    grid-template-columns: 100%;
+    height: max-content;
+    aspect-ratio: 1/5;
+  }
+  .main_weather {
+    width: 95%;
+    .weather_stats {
+      padding-left: 15px;
+    }
+  }
+
+  .hourly_forecast_container {
+    width: 85%;
+  }
+  .main_map {
+    width: 95%;
+    height: 40%;
   }
 }

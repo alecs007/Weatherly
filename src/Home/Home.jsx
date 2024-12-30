@@ -119,7 +119,7 @@ const Home = () => {
     if (coords && mapRef.current) {
       const map = new window.google.maps.Map(mapRef.current, {
         center: coords,
-        zoom: 12,
+        zoom: 11,
         disableDefaultUI: true,
         draggable: false,
         scrollwheel: false,
@@ -147,7 +147,7 @@ const Home = () => {
     dots: false,
     infinite: false,
     speed: 700,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 3,
     adaptiveHeight: false,
     variableWidth: true,

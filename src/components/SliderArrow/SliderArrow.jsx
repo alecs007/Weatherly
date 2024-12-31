@@ -1,4 +1,4 @@
-import "./SliderArrow.module.css";
+import "./SliderArrow.css";
 
 function SliderArrow(props) {
   const { className, onClick } = props;

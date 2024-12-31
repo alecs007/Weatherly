@@ -9,6 +9,7 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+  opacity: 0.7;
 }
 .slider-arrow::before {
   content: "";
@@ -25,6 +26,5 @@
   transform: rotate(-45deg);
 }
 .slick-arrow.slick-disabled {
-  opacity: 1;
   cursor: default;
 }

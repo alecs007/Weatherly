@@ -226,8 +226,8 @@ input:focus {
   width: 100px;
   transition: transform 0.3s ease-in-out;
   p {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 1em;
     color: rgba(0, 0, 0, 0.6);
     font-weight: 1000;

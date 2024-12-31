@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect } from "react";
 import Home from "./Home/Home";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const loadGoogleMaps = () => {
   const script = document.createElement("script");
@@ -20,6 +21,7 @@ function App() {
     <>
       <Header />
       <Home />
+      <Footer />
     </>
   );
 }

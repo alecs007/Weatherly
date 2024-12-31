@@ -101,15 +101,16 @@ input:focus {
 }
 .weather_container {
   margin-top: 1vh;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   aspect-ratio: 2 / 1;
   width: 70%;
   min-width: 1200px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(0, 0, 0, 0.226);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 12px;
-  border: 1px solid var(--text-color);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.534);
   display: grid;
   grid-template-areas: "forecast main details";
@@ -184,7 +185,7 @@ input:focus {
 }
 .weather_temp {
   p {
-    font-size: clamp(3.5em, 4vw, 8em);
+    font-size: clamp(3.3em, 4vw, 8em);
     color: rgba(0, 0, 0, 0.733);
     font-weight: 1000;
   }
@@ -194,6 +195,7 @@ input:focus {
     font-size: clamp(1.2em, 1vw, 1.5em);
     font-weight: 700;
     color: rgba(0, 0, 0, 0.747);
+    opacity: 0.7;
   }
 }
 .weather_img {
@@ -227,13 +229,13 @@ input:focus {
     margin-left: 10px;
     margin-right: 10px;
     font-size: 1em;
-    color: rgba(0, 0, 0, 0.719);
+    color: rgba(0, 0, 0, 0.6);
     font-weight: 1000;
   }
   h2 {
     text-align: center;
     font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.719);
+    color: rgba(0, 0, 0, 0.7);
     font-weight: 1000;
   }
   img {
@@ -271,7 +273,7 @@ input:focus {
   background: url("../assets/sky.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.5;
+  opacity: 0.7;
   z-index: -1;
   border-radius: 10px;
 }
@@ -363,11 +365,13 @@ input:focus {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: rgba(0, 0, 0, 0.719);
     font-weight: 1000;
+    opacity: 0.9;
   }
   p {
     font-size: clamp(0.8em, 1.4vw, 2em);
     color: rgba(0, 0, 0, 0.719);
     font-weight: 1000;
+    opacity: 0.7;
   }
   hr {
     width: 4px;
@@ -392,7 +396,7 @@ input:focus {
   }
   i {
     font-size: clamp(0.8em, 1vw, 1em);
-    color: rgba(0, 0, 0, 0.719);
+    color: rgba(87, 0, 0, 0.795);
     font-weight: 1000;
   }
 }
@@ -411,7 +415,7 @@ input:focus {
   img {
     height: 50%;
     width: 50%;
-    opacity: 0.8;
+    opacity: 0.7;
   }
   div:nth-child(2) {
     display: flex;
@@ -476,7 +480,7 @@ input:focus {
     overflow-y: auto;
   }
   .title {
-    margin-top: 50px;
+    margin-top: 60px;
   }
   .weather_container {
     min-width: 350px;
@@ -484,12 +488,12 @@ input:focus {
     max-width: 95vw;
     grid-template-areas:
       "main "
-      "forecast"
-      "details";
-    grid-template-rows: 30% 35% auto;
+      "details"
+      "forecast";
+    grid-template-rows: 33% auto 35%;
     grid-template-columns: 100%;
     height: max-content;
-    aspect-ratio: 1/5;
+    aspect-ratio: 1/4.5;
   }
   .main_weather {
     width: 95%;
@@ -497,12 +501,11 @@ input:focus {
       padding-left: 15px;
     }
   }
-
   .hourly_forecast_container {
     width: 85%;
   }
   .main_map {
     width: 95%;
-    height: 40%;
+    height: 37%;
   }
 }

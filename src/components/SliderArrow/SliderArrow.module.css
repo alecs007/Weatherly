@@ -1,0 +1,30 @@
+.slider-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color);
+  position: absolute;
+  border: 1px solid var(--text-color);
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.slider-arrow::before {
+  content: "";
+  height: 30%;
+  width: 30%;
+  display: block;
+  border: solid var(--text-color);
+  border-width: 0 2px 2px 0;
+}
+.slick-prev::before {
+  transform: rotate(135deg);
+}
+.slick-next::before {
+  transform: rotate(-45deg);
+}
+.slick-arrow.slick-disabled {
+  opacity: 1;
+  cursor: default;
+}

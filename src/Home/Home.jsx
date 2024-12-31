@@ -11,6 +11,7 @@ import wind from "../assets/wind.png";
 import rain from "../assets/rain.png";
 import sunrise from "../assets/sunrise.png";
 import sunset from "../assets/sunset.png";
+import SliderArrow from "../components/SliderArrow/SliderArrow";
 
 const Home = () => {
   const [weather, setWeather] = useState(null);
@@ -147,11 +148,22 @@ const Home = () => {
     dots: false,
     infinite: false,
     speed: 700,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 3,
     adaptiveHeight: false,
     variableWidth: true,
     centerMode: false,
+    nextArrow: <SliderArrow />,
+    prevArrow: <SliderArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
 
   return (

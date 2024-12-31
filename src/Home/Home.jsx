@@ -315,8 +315,16 @@ const Home = () => {
                 <img src={wind} alt="Wind Image" />
               </div>
               <div>
-                <h2>Wind speed: {weather.wind.speed.toFixed(1)} m/s</h2>
-                <h2>Wind direction: {weather.wind.deg}&deg;</h2>
+                <h2>
+                  Wind speed:{" "}
+                  <span style={{ opacity: 0.7 }}>
+                    {weather.wind.speed.toFixed(1)} m/s
+                  </span>
+                </h2>
+                <h2>
+                  Wind direction:{" "}
+                  <span style={{ opacity: 0.7 }}>{weather.wind.deg}&deg;</span>
+                </h2>
               </div>
             </div>
             <div className={styles.details_item}>
@@ -324,7 +332,12 @@ const Home = () => {
                 <img src={rain} alt="Rain Image" />
               </div>
               <div>
-                <h2>Rain Volume: {weather.rain ? weather.rain["1h"] : 0} mm</h2>
+                <h2>
+                  Rain Volume:{" "}
+                  <span style={{ opacity: 0.7 }}>
+                    {weather.rain ? weather.rain["1h"] : 0} mm
+                  </span>
+                </h2>
                 {weather.snow && <h2>Snow Volume: {weather.snow["1h"]} mm </h2>}
               </div>
             </div>

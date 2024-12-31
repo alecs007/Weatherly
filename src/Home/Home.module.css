@@ -10,7 +10,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 .title {
-  font-size: clamp(4em, 8vw, 10em);
+  font-size: clamp(3.9em, 8vw, 10em);
   color: var(--text-color);
   font-family: title;
   margin-top: 10px;
@@ -43,6 +43,7 @@ input {
   height: 100%;
   width: clamp(280px, 40vw, 600px);
   border: none;
+  border-radius: 0px;
   padding: 0 10px;
   font-size: 1em;
 }
@@ -397,7 +398,7 @@ input:focus {
   }
   i {
     font-size: clamp(0.8em, 1vw, 1em);
-    color: rgba(87, 0, 0, 0.795);
+    color: rgba(87, 16, 16, 0.795);
     font-weight: 1000;
   }
 }

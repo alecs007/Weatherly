@@ -338,7 +338,7 @@ const Home = () => {
                     {weather.rain ? weather.rain["1h"] : 0} mm
                   </span>
                 </h2>
-                {weather.snow && <h2>Snow Volume: {weather.snow["1h"]} mm </h2>}
+                {weather.snow && <h2>Snow: {weather.snow["1h"]} mm</h2>}
               </div>
             </div>
             <div className={styles.details_item}>

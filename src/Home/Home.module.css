@@ -226,8 +226,8 @@ input:focus {
   transition: transform 0.3s ease-in-out;
   p {
     text-align: center;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 1em;
     color: rgba(0, 0, 0, 0.6);
     font-weight: 1000;
@@ -316,12 +316,8 @@ input:focus {
   padding-left: 20px;
   h2 {
     font-size: clamp(1.2em, 1vw, 2em);
-    color: rgba(0, 0, 0, 0.719);
-    font-family:
-      "Franklin Gothic Medium",
-      "Arial Narrow",
-      Arial,
-      sans-serif sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-weight: 1000;
   }
   p {
@@ -356,7 +352,7 @@ input:focus {
 .details_item {
   width: 95%;
   height: 14%;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--text-color);
   border-radius: 10px;
   font-size: clamp(1.5em, 1.2vw, 2em);

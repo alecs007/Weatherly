@@ -22,10 +22,10 @@ const Home = () => {
   const [forecast, setForecast] = useState(null);
   const [hourlyForecast, setHourlyForecast] = useState(null);
   const [coords, setCoords] = useState(null);
+  const [temperatureUnit, setTemperatureUnit] = useState("Celsius");
   const mapRef = useRef(null);
 
   const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
-
   const fetchWeather = async () => {
     const loc = location.trim() || "Bucharest";
     setLoading(true);
@@ -110,6 +110,10 @@ const Home = () => {
   const handleSuggestionClick = (suggestions) => {
     setLocation(suggestions.name);
     setSuggestions([]);
+  };
+
+  const handleTemperatureUnit = () => {
+    setTemperatureUnit(temperatureUnit === "Celsius" ? "Farenheit" : "Celsius");
   };
 
   useEffect(() => {
@@ -218,11 +222,21 @@ const Home = () => {
                   <img src={location_icon} alt="search" />
                   <p>{weather.name}</p>
                 </div>
-                <div className={styles.weather_temp}>
-                  <p>
-                    {weather.main.temp.toFixed(1)}
-                    °C
-                  </p>
+                <div
+                  className={styles.weather_temp}
+                  onClick={() => handleTemperatureUnit()}
+                >
+                  {temperatureUnit === "Celsius" ? (
+                    <p>
+                      {weather.main.temp.toFixed(1)}
+                      °C
+                    </p>
+                  ) : (
+                    <p>
+                      {((weather.main.temp * 9) / 5 + 32).toFixed(1)}
+                      °F
+                    </p>
+                  )}
                 </div>
                 <div className={styles.weather_description}>
                   <p>{weather.weather[0].description}</p>
@@ -251,7 +265,17 @@ const Home = () => {
                         src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`}
                         alt={hour.weather[0].description}
                       />
-                      <h2>{hour.temp.toFixed(1)}°C</h2>
+                      {temperatureUnit === "Celsius" ? (
+                        <h2>
+                          {hour.temp.toFixed(1)}
+                          °C
+                        </h2>
+                      ) : (
+                        <h2>
+                          {((hour.temp * 9) / 5 + 32).toFixed(1)}
+                          °F
+                        </h2>
+                      )}
                     </div>
                   ))}
                 </Slider>
@@ -281,7 +305,17 @@ const Home = () => {
                         className={styles.forecast_img}
                       />
                       <div className={styles.forecast_p2}>
-                        <p>{day.main.temp.toFixed(1)}°C</p>
+                        {temperatureUnit === "Celsius" ? (
+                          <p>
+                            {day.main.temp.toFixed(1)}
+                            °C
+                          </p>
+                        ) : (
+                          <p>
+                            {((day.main.temp * 9) / 5 + 32).toFixed(1)}
+                            °F
+                          </p>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -293,21 +327,51 @@ const Home = () => {
             <div className={styles.details_item}>
               <div className={styles.feels_like}>
                 <h2>Feels like</h2>
-                <p>{weather.main.feels_like.toFixed(1)}°C</p>
+                {temperatureUnit === "Celsius" ? (
+                  <p>
+                    {weather.main.feels_like.toFixed(1)}
+                    °C
+                  </p>
+                ) : (
+                  <p>
+                    {((weather.main.feels_like * 9) / 5 + 32).toFixed(1)}
+                    °F
+                  </p>
+                )}
               </div>
               <hr></hr>
               <div className={styles.max_min_temp}>
                 <h2>
                   Min <i className="fa-solid fa-arrow-down"></i>
                 </h2>
-                <p>{weather.main.temp_min.toFixed(1)}°C</p>
+                {temperatureUnit === "Celsius" ? (
+                  <p>
+                    {weather.main.temp_min.toFixed(1)}
+                    °C
+                  </p>
+                ) : (
+                  <p>
+                    {((weather.main.temp_min * 9) / 5 + 32).toFixed(1)}
+                    °F
+                  </p>
+                )}
               </div>
               <hr></hr>
               <div className={styles.max_min_temp}>
                 <h2>
                   Max <i className="fa-solid fa-arrow-up"></i>
                 </h2>
-                <p>{weather.main.temp_max.toFixed(1)}°C</p>
+                {temperatureUnit === "Celsius" ? (
+                  <p>
+                    {weather.main.temp_max.toFixed(1)}
+                    °C
+                  </p>
+                ) : (
+                  <p>
+                    {((weather.main.temp_max * 9) / 5 + 32).toFixed(1)}
+                    °F
+                  </p>
+                )}
               </div>
             </div>
             <div className={styles.details_item}>

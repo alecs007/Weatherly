@@ -108,8 +108,6 @@ input:focus {
   min-width: 1200px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(0, 0, 0, 0);
   border-radius: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.534);
@@ -220,7 +218,7 @@ input:focus {
   align-items: center;
   justify-content: space-around;
   background-color: #d8daddcc;
-  border: 3px solid rgba(38, 64, 102, 0.479);
+  border: 1px solid rgba(38, 64, 102, 0.479);
   border-radius: 10px;
   padding: 5px;
   height: 120px;
@@ -301,7 +299,8 @@ input:focus {
   height: 17%;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.438);
+  background-color: rgba(255, 255, 255, 0.238);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
 }
@@ -357,8 +356,8 @@ input:focus {
 .details_item {
   width: 95%;
   height: 14%;
-  background-color: rgba(255, 255, 255, 0.884);
-  border: 3px solid rgba(0, 0, 0, 0.541);
+  background-color: transparent;
+  border: 1px solid var(--text-color);
   border-radius: 10px;
   font-size: clamp(1.5em, 1.2vw, 2em);
   color: rgba(0, 0, 0, 0.719);
@@ -366,18 +365,19 @@ input:focus {
   h2 {
     font-size: clamp(1em, 1.5vw, 1.2em);
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    color: rgba(0, 0, 0, 0.719);
+    color: var(--text-color);
     font-weight: 1000;
-    opacity: 0.9;
+    opacity: 0.8;
+    text-wrap: nowrap;
   }
   p {
     font-size: clamp(0.8em, 1.4vw, 2em);
-    color: rgba(0, 0, 0, 0.719);
+    color: var(--text-color);
     font-weight: 1000;
-    opacity: 0.7;
+    opacity: 0.6;
   }
   hr {
-    width: 4px;
+    width: 2px;
     background-color: rgba(0, 0, 0, 0.356);
     border: none;
   }
@@ -399,7 +399,7 @@ input:focus {
   }
   i {
     font-size: clamp(0.8em, 1vw, 1em);
-    color: rgba(87, 16, 16, 0.795);
+    color: rgb(100, 100, 100);
     font-weight: 1000;
   }
 }
@@ -418,7 +418,7 @@ input:focus {
   img {
     height: 50%;
     width: 50%;
-    opacity: 0.7;
+    opacity: 0.8;
   }
   div:nth-child(2) {
     display: flex;
@@ -429,7 +429,7 @@ input:focus {
   h2 {
     font-size: clamp(0.9em, 1vw, 1.2em);
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    color: rgba(0, 0, 0, 0.719);
+    color: var(--text-color);
     font-weight: 1000;
   }
 }
@@ -474,11 +474,11 @@ input:focus {
   }
   p {
     font-size: clamp(0.7em, 1vw, 1em);
-    color: rgba(0, 0, 0, 0.719);
+    color: var(--text-color);
     font-weight: 1000;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .home_container {
     overflow-y: auto;
   }

@@ -243,9 +243,7 @@ input:focus {
     height: 60%;
   }
 }
-.hourly_forecast_item:hover {
-  transform: scale(1.02);
-}
+
 .main_map {
   background-color: indianred;
   width: 98%;

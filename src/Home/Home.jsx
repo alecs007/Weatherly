@@ -237,6 +237,9 @@ const Home = () => {
                       °F
                     </p>
                   )}
+                  <div className={styles.temp_exp}>
+                    \{temperatureUnit === "Celsius" ? "°F" : "°C"}
+                  </div>
                 </div>
                 <div className={styles.weather_description}>
                   <p>{weather.weather[0].description}</p>

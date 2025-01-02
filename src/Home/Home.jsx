@@ -406,7 +406,7 @@ const Home = () => {
                   </span>
                 </h2>
                 {weather.snow && (
-                  <h2 style={{ fontSize: "clamp(0.7em, 1vw, 1em)" }}>
+                  <h2>
                     Snow Volume:{" "}
                     <span style={{ opacity: 0.6 }}>
                       {weather.snow["1h"]} mm

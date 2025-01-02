@@ -436,7 +436,7 @@ input:focus {
     width: 70%;
   }
   h2 {
-    font-size: clamp(0.9em, 1vw, 1.2em);
+    font-size: clamp(0.7em, 1vw, 1.2em);
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: var(--text-color);
     font-weight: 1000;

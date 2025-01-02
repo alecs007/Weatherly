@@ -188,7 +188,7 @@ input:focus {
   position: relative;
   cursor: pointer;
   p {
-    font-size: clamp(3.3em, 4vw, 8em);
+    font-size: clamp(3em, 4vw, 8em);
     color: rgba(0, 0, 0, 0.733);
     font-weight: 1000;
   }

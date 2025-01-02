@@ -10,7 +10,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 .title {
-  font-size: clamp(3.9em, 8vw, 10em);
+  font-size: clamp(3.7em, 8vw, 10em);
   color: var(--text-color);
   font-family: title;
   margin-top: 10px;
@@ -497,7 +497,7 @@ input:focus {
   .weather_container {
     min-width: 350px;
     width: 500px;
-    max-width: 95vw;
+    max-width: 90vw;
     grid-template-areas:
       "main "
       "details"

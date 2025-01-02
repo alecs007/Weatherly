@@ -405,7 +405,14 @@ const Home = () => {
                     {weather.rain ? weather.rain["1h"] : 0} mm
                   </span>
                 </h2>
-                {weather.snow && <h2>Snow Volume: {weather.snow["1h"]} mm</h2>}
+                {weather.snow && (
+                  <h2 style={{ fontSize: "clamp(0.7em, 1vw, 1em)" }}>
+                    Snow Volume:{" "}
+                    <span style={{ opacity: 0.6 }}>
+                      {weather.snow["1h"]} mm
+                    </span>
+                  </h2>
+                )}
               </div>
             </div>
             <div className={styles.details_item}>

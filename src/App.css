@@ -1,6 +1,6 @@
 @font-face {
   font-family: title;
-  src: url("../public/fonts/TrainOne-Regular.ttf");
+  src: url("/fonts/TrainOne-Regular.ttf");
 }
 :root {
   --text-color: #000000de;

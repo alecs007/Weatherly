@@ -247,7 +247,7 @@ input:focus {
   h2 {
     text-align: center;
     font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.6);
     font-weight: 1000;
   }
   img {
@@ -357,7 +357,7 @@ input:focus {
   justify-content: center;
   p {
     font-size: clamp(1.5em, 1.2vw, 2em);
-    color: rgba(0, 0, 0, 0.719);
+    color: rgba(0, 0, 0, 0.6);
     font-weight: 1000;
     margin-right: 10px;
   }

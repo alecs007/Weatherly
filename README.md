@@ -5,7 +5,7 @@ Weatherly is a modern and intuitive weather app that provides real-time weather 
 **What I learned while making Weatherly:**
 
         •API Integration: Gained hands-on experience with fetching, managing, and displaying real-time weather data.
-        •React Development: Strengthened my skills in using components, hooks, and state management to create interactive interfaces.
+        •React Development: Strengthened my skills in using components and hooks to create interactive interfaces.
         •Error Handling: Implemented robust error management to ensure smooth performance even in case of network issues.
         •UI/UX Design: Focused on creating a visually appealing interface using CSS flexbox, grid, and modern design principles.
 

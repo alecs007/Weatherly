@@ -1,13 +1,13 @@
 <h1 align="center"><strong><em>Weatherly</em></strong></h1>
 
-    Weatherly is a modern and intuitive weather app that provides real-time weather updates and insights for any location. Designed with a focus on usability and aesthetics, it ensures you stay informed and prepared, no matter the conditions. Whether you’re planning your day or just curious about the weather, Weatherly delivers accurate and accessible information.
+Weatherly is a modern and intuitive weather app that provides real-time weather updates and insights for any location. Designed with a focus on usability and aesthetics, it ensures you stay informed and prepared, no matter the conditions. Whether you’re planning your day or just curious about the weather, Weatherly delivers accurate and accessible information.
 
 **What I learned while making Weatherly:**
 
-API Integration: Gained hands-on experience with fetching, managing, and displaying real-time weather data.
-React Development: Enhanced my understanding of React components, hooks, and state management to create a dynamic and interactive user interface.
-Responsive Design: Learned to design layouts that adapt seamlessly to different devices, providing a consistent user experience across desktops, tablets, and phones.
-Error Handling: Implemented robust error management to ensure smooth performance even in case of network issues.
-UI/UX Design: Focused on creating a visually appealing and user-friendly interface using CSS flexbox, grid, and modern design principles.
+        -API Integration: Gained hands-on experience with fetching, managing, and displaying real-time weather data.
+        -React Development: Enhanced my understanding of React components, hooks, and state management to create a dynamic and interactive user interface.
+        -Responsive Design: Learned to design layouts that adapt seamlessly to different devices, providing a consistent user experience across desktops, tablets, and phones.
+        -Error Handling: Implemented robust error management to ensure smooth performance even in case of network issues.
+        -UI/UX Design: Focused on creating a visually appealing and user-friendly interface using CSS flexbox, grid, and modern design principles.
 
 Weatherly reflects my growth as a developer, combining functionality, design, and technology to create a practical and reliable tool. It’s more than just an app—it’s a testament to the skills and knowledge I’ve developed while working on real-world projects.

@@ -1,6 +1,6 @@
-#<h1 align="center"><strong><em>Weatherly</em></strong></h1>
+<h1 align="center"><strong><em>Weatherly</em></strong></h1>
 
-Weatherly is a modern and intuitive weather app that provides real-time weather updates and insights for any location. Designed with a focus on usability and aesthetics, it ensures you stay informed and prepared, no matter the conditions. Whether you’re planning your day or just curious about the weather, Weatherly delivers accurate and accessible information.
+    Weatherly is a modern and intuitive weather app that provides real-time weather updates and insights for any location. Designed with a focus on usability and aesthetics, it ensures you stay informed and prepared, no matter the conditions. Whether you’re planning your day or just curious about the weather, Weatherly delivers accurate and accessible information.
 
 **What I learned while making Weatherly:**
 

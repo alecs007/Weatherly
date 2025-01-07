@@ -307,7 +307,7 @@ input:focus {
 }
 .forecast_item {
   width: 80%;
-  height: 17%;
+  height: clamp(15%, 90px, 17%);
   display: flex;
   justify-content: space-between;
   backdrop-filter: blur(15px);
@@ -353,6 +353,7 @@ input:focus {
 .forecast_p2 {
   width: 30%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   p {
@@ -360,6 +361,24 @@ input:focus {
     color: rgba(0, 0, 0, 0.6);
     font-weight: 1000;
     margin-right: 10px;
+  }
+}
+.forecast_p2_minmax {
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  h3 {
+    font-size: clamp(0.3em, 0.5vw, 1em);
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 1000;
+  }
+  hr {
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+    border: none;
   }
 }
 .details_item {

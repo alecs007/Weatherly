@@ -319,6 +319,31 @@ const Home = () => {
                             °F
                           </p>
                         )}
+                        <div className={styles.forecast_p2_minmax}>
+                          {temperatureUnit === "Celsius" ? (
+                            <h3>
+                              {day.main.temp_min.toFixed(1)}
+                              °C
+                            </h3>
+                          ) : (
+                            <h3>
+                              {((day.main.temp_min * 9) / 5 + 32).toFixed(1)}
+                              °F
+                            </h3>
+                          )}
+                          <hr></hr>
+                          {temperatureUnit === "Celsius" ? (
+                            <h3>
+                              {day.main.temp_max.toFixed(1)}
+                              °C
+                            </h3>
+                          ) : (
+                            <h3>
+                              {((day.main.temp_max * 9) / 5 + 32).toFixed(1)}
+                              °F
+                            </h3>
+                          )}
+                        </div>
                       </div>
                     </div>
                   ))}

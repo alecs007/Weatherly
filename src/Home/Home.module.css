@@ -362,6 +362,9 @@ input:focus {
     font-weight: 1000;
     margin-right: 10px;
   }
+  .forecast_p2_minmax {
+    margin-right: 10px;
+  }
 }
 .forecast_p2_minmax {
   padding-top: 5px;
@@ -370,7 +373,7 @@ input:focus {
   justify-content: center;
   gap: 5px;
   h3 {
-    font-size: clamp(0.3em, 0.5vw, 1em);
+    font-size: clamp(0.6em, 0.5vw, 1em);
     color: rgba(0, 0, 0, 0.6);
     font-weight: 1000;
   }

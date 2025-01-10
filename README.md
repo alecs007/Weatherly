@@ -10,3 +10,5 @@ Weatherly is a modern and intuitive weather app that provides real-time weather 
         •UI/UX Design: Focused on creating a visually appealing interface using CSS flexbox, grid, and modern design principles.
 
 Weatherly reflects my growth as a developer, combining functionality, design, and technology to create a practical and reliable website. It’s more than just an app—it’s a testament to the skills and knowledge I’ve developed while working on real-world projects.
+
+![weatherly_presentation](https://github.com/user-attachments/assets/98e847ab-d137-445c-a5d1-ab8dd347d18d)

@@ -10,7 +10,7 @@
         •Error Handling: Implemented robust error management to ensure smooth performance even in case of network issues.
         •UI/UX Design: Focused on creating a visually appealing interface using CSS flexbox, grid, and modern design principles.
 
-Weatherly reflects my growth as a developer, combining functionality, design, and technology to create a practical and reliable website. It’s more than just an app, it’s a testament to the skills and knowledge I’ve developed while working on real-world projects.
+Weatherly reflects my growth as a developer, combining functionality, design, and technology to create a practical and reliable website. It’s more than just an app, it’s a testament to the skills and knowledge I’ve developed while working on real-world projects.⛅
 
 ![weatherly_presentation2](https://github.com/user-attachments/assets/80ad406d-93d5-4f1d-a8c5-01ee3feb1ef4)
 

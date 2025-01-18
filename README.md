@@ -9,6 +9,7 @@
     •React Development: Strengthened my skills in using components and hooks to create interactive interfaces.
     •Error Handling: Implemented robust error management to ensure smooth performance even in case of network issues.
     •UI/UX Design: Focused on creating a visually appealing interface using CSS flexbox, grid, and modern design principles.
+    •Theme Switching: Learned how to implement a two-theme feature to improve user experience.
 
 Weatherly reflects my growth as a developer, combining functionality, design, and technology to create a practical and reliable website. It’s more than just an app, it’s a testament to the skills and knowledge I’ve developed while working on real-world projects.
 

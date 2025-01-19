@@ -7,7 +7,7 @@
 
     • API Integration: Gained hands-on experience with fetching, managing, and displaying real-time weather data.
     • React Development: Strengthened my skills in using components and hooks to create interactive interfaces.
-    • Error Handling: Implemented robust error management to ensure smooth performance even in case of network issues.
+    • Error Handling: Implemented effective error handling to ensure the app stays functional and user-friendly.
     • UI/UX Design: Focused on creating a visually appealing interface using CSS flexbox, grid, and modern design principles.
     • Theme Switching: Learned how to implement a two-theme feature to improve user experience.
 

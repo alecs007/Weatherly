@@ -476,10 +476,12 @@ const Home = () => {
                 <span>
                   <h2>Sunrise</h2>
                   <p>
-                    {new Date(weather.sys.sunrise * 1000).toLocaleTimeString(
-                      [],
-                      { hour: "2-digit", minute: "2-digit" }
-                    )}
+                    {new Date(
+                      (weather.sys.sunrise + weather.timezone) * 1000
+                    ).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
                   </p>
                 </span>
               </div>
@@ -488,10 +490,12 @@ const Home = () => {
                 <span>
                   <h2>Sunset</h2>
                   <p>
-                    {new Date(weather.sys.sunset * 1000).toLocaleTimeString(
-                      [],
-                      { hour: "2-digit", minute: "2-digit" }
-                    )}
+                    {new Date(
+                      (weather.sys.sunset + weather.timezone) * 1000
+                    ).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
                   </p>
                 </span>
               </div>

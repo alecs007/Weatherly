@@ -50,6 +50,7 @@ body {
   align-items: center;
   height: 95vh;
   overflow: hidden;
+  background-color: var(--background-color);
 }
 
 .spinner {

@@ -13,7 +13,8 @@
 
 Weatherly reflectss my growth as a developer, combining functionality, design, and technology to create a practical and reliable website. It’s more than just an app, it’s a testament to the skills and knowledge I’ve developed while working on real-world projects.
 
-![presentation_weatherly](https://github.com/user-attachments/assets/80023264-eae0-4106-b878-622345a3dc8a)
+![presentation_weatherly](https://github.com/user-attachments/assets/16332876-b957-48e3-a900-9255ec408847)
+
 
 
 
